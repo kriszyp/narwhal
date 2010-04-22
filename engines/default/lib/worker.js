@@ -76,6 +76,7 @@ function createWorker(scriptName, setup, workerName){
     workerQueue = sandbox("event-loop"); 
     
     sandbox("worker").name = workerName;
+    workerGlobal.name = workerName;
     
     // calback for dedicated and shared workers to do their thing
     var worker = setup(workerQueue, workerGlobal);
